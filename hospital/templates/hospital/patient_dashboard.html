@@ -1,7 +1,8 @@
 {% block content %}
     {% if user.is_authenticated %}
         Hello, {{ user.username }}.
+        <a href="{% url 'hospital:logout' %}">Log out</a>
     {% else %}
-        <a href="{% url 'hospital:doctor_signup_view' %}">Sign up</a>
+        <a href="{% url 'hospital:patient_signup_view' %}">Sign up</a>
     {% endif %}
 {% endblock content %}

@@ -1,0 +1,5 @@
+14 Aguest : 
+    * GOAL :    
+        Handle the user accounts to sign in or register
+    * CHANGES :
+        add the old way of urls to the project to see what happend

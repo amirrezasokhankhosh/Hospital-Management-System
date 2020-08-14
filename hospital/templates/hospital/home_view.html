@@ -1,0 +1,14 @@
+{% extends 'hospital/home_base.html' %}
+{% block content %}
+    <ul>
+        <li>
+            <a href="{% url 'hospital:admin_click_view' %}">Admin</a>
+        </li>
+        <li>
+            <a href="{% url 'hospital:doctor_click_view' %}">Doctor</a>
+        </li>
+        <li>
+            <a href="{% url 'hospital:patient_click_view' %}">Patient</a>
+        </li>
+    </ul>
+{% endblock content %}

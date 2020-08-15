@@ -1,3 +1,4 @@
+{% extends 'hospital/navbar.html' %}
 {% block content %}
     {% if user.is_authenticated %}
         Hello, {{ user.username }}.
@@ -5,4 +6,30 @@
     {% else %}
         <a href="{% url 'hospital:admin_signup_view' %}">Sign up</a>
     {% endif %}
+    <p>Doctors</p>
+    <ul>
+        {% for doctor in doctors %}
+            <li><a href="{% url 'hospital:admin_doctor_view' doctor.id %}">{{ doctor }}</a></li>
+        {% empty %}
+            <li>No doctors have been added yet.</li>
+        {% endfor %}
+        <p>Approved Doctors : {{doctor_count}}</p>
+        <p><a href="{% url 'hospital:admin_not_approved_doctors_view' %}">Not approved doctors count : {{ pending_doctor_count }}</a></p>
+        <a href="{% url 'hospital:admin_add_doctor_view' %}">Add a new doctor:</a>
+    </ul>
+    <p>Patients</p>
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient }}</li>
+        {% empty %}
+            <li>No patients have been added yet.</li>
+        {% endfor %}
+        <p>Approved Patients : {{patient_count}}</p>
+        <p>Else patients : {{pending_patient_count}}</p>
+    </ul>
+    <p>Appointments</p>
+    <ul>
+        <p>Approved Appointments : {{appointment_count}}</p>
+        <p>Else Appointments : {{pending_appointment_count}}</p>
+    </ul>
 {% endblock content %}

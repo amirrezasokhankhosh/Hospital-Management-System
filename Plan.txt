@@ -10,3 +10,14 @@
 
 
 ------------
+
+15 Aguest :
+
+    * GOAL :
+        end the doctor relaited stuff for admin page
+
+    * CHANGES :
+        create a navbar or something "DONE"
+    
+    * END :
+        compeleted all the features for doctors in admin page

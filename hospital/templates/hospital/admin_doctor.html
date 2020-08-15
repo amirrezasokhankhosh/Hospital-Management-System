@@ -1,0 +1,19 @@
+{% extends 'hospital/navbar.html' %}
+{% block content %}
+    <p>Doctor : {{doctor}}</p>
+    <ul>
+        <li>
+            Address : {{address}}
+        </li>
+        <li>
+            Mobile : {{mobile}}
+        </li>
+        <li>
+            Department : {{department}}
+        </li>
+        <li>
+            Status : {{status}}
+        </li>
+    </ul>
+    <a href="{% url 'hospital:reject_or_delete_doctor_view' doctor.id %}">Delete the doctor</a>
+{% endblock content %}

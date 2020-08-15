@@ -45,6 +45,20 @@ urlpatterns = [
     url(r'^after_login/$' , views.after_login_view , name='after_login_view'),
 
     # LOG OUT
-    url(r'^logout/$' , LogoutView.as_view(template_name='hospital/home_view.html'),name='logout')
+    url(r'^logout/$' , LogoutView.as_view(template_name='hospital/home_view.html'),name='logout'),
 
+    # SEE A DOCTOR IN ADMIN DASHBOARD PAGE
+    url(r'^admin_dashboard/(?P<doctor_id>\d+)/$', views.admin_doctor_view, name='admin_doctor_view'),
+
+    # ADMIN ADD A DOCTOR
+    url(r'^admin_add_doctor/$' , views.admin_add_doctor_view , name='admin_add_doctor_view'),
+
+    # NOT APPROVED DOCTORS 
+    url(r'^not_apporved_doctors/$' , views.admin_not_approved_doctors_view , name = 'admin_not_approved_doctors_view'),
+
+    # APPROVE THE DOCTOR
+    url(r'^approve_the_doctor/(?P<doctor_id>\d+)/$' , views.approve_doctor_view , name='approve_doctor_view'),
+
+    # REJECT OR DELETE THE DOCTOR
+    url(r'^reject_or_delete_the_doctor/(?P<doctor_id>\d+)/$' , views.reject_or_delete_doctor_view , name='reject_or_delete_doctor_view'),
 ]

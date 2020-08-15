@@ -1,0 +1,12 @@
+
+<p>
+    <a href="{% url 'hospital:home_view' %}">Hospital Management</a>
+    |
+    <a href="{% url 'hospital:admin_click_view' %}">Admin</a>
+    -
+    <a href="{% url 'hospital:doctor_click_view' %}">Doctor</a>
+    -
+    <a href="{% url 'hospital:patient_click_view' %}">Patient</a>
+</p>
+{% block content %}
+{% endblock content %}

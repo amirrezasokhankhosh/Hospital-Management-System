@@ -1,0 +1,15 @@
+{% extends 'hospital/navbar.html' %}
+{% block content %}
+<p>Doctors</p>
+    <ul>
+        {% for doctor in doctors %}
+            <li>
+                <a href="{% url 'hospital:admin_doctor_view' doctor.id %}">{{ doctor }}</a>
+                <a href="{% url 'hospital:approve_doctor_view' doctor.id %}">Approve the doctor</a>
+                <a href="{% url 'hospital:reject_or_delete_doctor_view' doctor.id %}">Reject the doctor</a>
+            </li>
+        {% empty %}
+            <li>No not approved doctors have been added yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

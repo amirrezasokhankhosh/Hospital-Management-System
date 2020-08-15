@@ -1,9 +1,8 @@
-
+{% extends 'hospital/navbar.html' %}
 {% block content %}
     <form method="post" action="{% url 'hospital:admin_signup_view' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button name="submit">register</button>
-        <input type="hidden" name="next" value="{% url 'hospital:admin_dashboard_view' %}" />
     </form>
 {% endblock content %}

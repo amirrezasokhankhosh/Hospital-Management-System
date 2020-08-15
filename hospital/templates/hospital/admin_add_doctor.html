@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% extends 'hospital/navbar.html' %}
 {% load widget_tweaks %}
+{% block content %}
 <html lang="en" dir="ltr">
 
 <head>
@@ -62,8 +63,7 @@
 
             </div>
           </div>
-          <button type="submit">Register</button>
-          <div class="text-center">Already have an account? <a href="doctor_login">Login here</a></div>
+          <button type="submit">Add Doctor</button>
         </div>
       </div>
     </div>
@@ -72,3 +72,5 @@
 </body>
 
 </html>
+
+{% endblock content %}
